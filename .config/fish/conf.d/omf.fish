@@ -15,3 +15,4 @@ alias matrixme="cmatrix -ksbC magenta -M Arch"
 alias smci="sudo make clean install"
 alias ls='exa -al --color=always --group-directories-first'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' 
+alias rm="rm -i"
