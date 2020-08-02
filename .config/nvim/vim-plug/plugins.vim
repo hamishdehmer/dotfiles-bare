@@ -33,5 +33,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  
+  Plug 'voldikss/vim-floaterm'
 
 call plug#end()
