@@ -36,4 +36,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   
   Plug 'voldikss/vim-floaterm'
 
+  Plug 'skammer/vim-css-color'
+
 call plug#end()
