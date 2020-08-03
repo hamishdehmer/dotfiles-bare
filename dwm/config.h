@@ -6,8 +6,8 @@ static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=12" };
-static const char dmenufont[]       = "monospace:size=12";
+static const char *fonts[]          = { "hack:size=12" };
+static const char dmenufont[]       = "hack:size=12";
 // Background color
 static const char col_gray1[]       = "#1f1f1f";
 // Inactive window border color
@@ -34,7 +34,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Brave",  NULL,       NULL,       0,            0,           -1 },
 };
 
 /* layout(s) */
@@ -64,15 +64,18 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *browser[] = { "firefox", NULL };
+static const char *browser[] = { "Brave", NULL };
 static const char *slock[] = { "slock", NULL };
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,           		    XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,				XK_b,      spawn,		   {.v = browser } },
-	{ MODKEY|ShiftMask,				XK_s,      spawn,		   {.v = slock } },
+	{ MODKEY,           	          XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,		          XK_b,      spawn,	    	   {.v = browser } },
+	{ MODKEY|ShiftMask,	           	XK_s,      spawn,		       {.v = slock } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -107,6 +110,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_c,      quit,           {0} },
+	{ MODKEY,                       XK_F2, spawn, {.v = downvol } },
+	{ MODKEY,                       XK_F1,  spawn, {.v = mutevol } },
+	{ MODKEY,                       XK_F3, spawn, {.v = upvol   } },
 };
 
 /* button definitions */
@@ -125,4 +131,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
