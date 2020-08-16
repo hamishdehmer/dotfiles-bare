@@ -14,19 +14,19 @@ call plug#begin('~/.config/nvim/autoload/plugged')
        Plug 'scrooloose/NERDTree'
      " Auto pairs for '(' '[' '{'
        Plug 'jiangmiao/auto-pairs'
-  "Automatic suggestions     
+  " Automatic suggestions     
   Plug 'neoclide/coc.nvim', {'branch': 'release'} 
   " Show Keybindings
   Plug 'liuchengxu/vim-which-key'
-  "Fzf integration
+  " Fzf integration
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
-	"Adds ranger support
+	" Adds ranger support
 	Plug 'francoiscabrol/ranger.vim'
 	Plug 'rbgrouleff/bclose.vim'
-  "Sneak around the window
+  " Sneak around the window
   Plug 'justinmk/vim-sneak'
-  "Colorzer for css
+  " Colorzer for css
   Plug 'norcalli/nvim-colorizer.lua'
   " Dracula theme
   Plug 'dracula/vim', { 'as': 'dracula' }
@@ -35,7 +35,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'vim-airline/vim-airline-themes'
   " Floaterm
   Plug 'voldikss/vim-floaterm'
-  "Css Colors
+  " Css Colors
   Plug 'skammer/vim-css-color'
-
+  " Markdown Preview
+  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
