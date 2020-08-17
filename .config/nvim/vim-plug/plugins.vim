@@ -39,4 +39,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'skammer/vim-css-color'
   " Markdown Preview
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-call plug#end()
+  " languagetool plugin
+  Plug 'dpelle/vim-LanguageTool'
+  call plug#end()

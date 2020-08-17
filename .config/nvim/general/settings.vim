@@ -1,11 +1,18 @@
 " set leader key
 let g:mapleader = "\<Space>"
 
+set termguicolors
 syntax enable 
 colorscheme dracula
 " Enables syntax highlighing
 set hidden                              " Required to keep multiple buffers open multiple buffers
-set nowrap                              " Display long lines as just one line
+set wrap                                " Wraps Text
+set relativenumber                      " Sets relative number in relation to your current line
+set spell spelllang=en_us               " Sets spelling language
+set linebreak                           " Breaks line
+set autoread                            " Automatically sets lists to read
+set confirm                             " Forces confirmation upon leaving
+set spellcapcheck=[1.?1]\_[\])'"^I ]\+
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
@@ -33,12 +40,21 @@ set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
 set updatetime=300                      " Faster completion
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
-set formatoptions-=cro                  " Stop newline continution of comments
+set formatoptions-=cro                  " Stop newline continuation of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set autochdir                           " Your working directory will always be the same as your working directory
+set thesaurus+=/home/ziox/thesaurus/thesaurii.txt
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
 " You can't stop me
 cmap w!! w !sudo tee %
 
+" Key bindings
+nmap <C-n> :NERDTreeToggle<CR>
+" NERDTree Config 
+let NERDTreeQuitOnOpen = 1
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeShowHidden = 1
