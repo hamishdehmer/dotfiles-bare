@@ -74,6 +74,8 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-directory-history/zsh-directory-history.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -83,7 +85,7 @@ source /usr/share/zsh/plugins/zsh-directory-history/zsh-directory-history.zsh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#   export EDITOR='nvim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -101,17 +103,25 @@ source /usr/share/zsh/plugins/zsh-directory-history/zsh-directory-history.zsh
  alias ohmyzsh="nvim ~/.oh-my-zsh"
 pfetch
 /home/ziox/color-scripts/color-scripts/bars
-alias pacin="yay -S"
-alias pacup="yay -Syu"
-alias pacre="yay -Rs"
+alias yi="yay -S"
+alias yu="yay -Syu"
+alias yr="yay -Rs"
 alias doas="doas --"
 alias matrixme="cmatrix -ksbC magenta -M Arch"
 alias smci="sudo make clean install"
 alias ls='exa -al --color=always --group-directories-first'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' 
 alias rm="rm -i"
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias top="ytop"
+alias tldr="tealdeer"
+alias v="nvim"
+alias btop="bpytop"
+alias dox="cd ~/dox"
+alias new="clear; pfetch"
+alias ..="cd .."
+alias mount="mount | column -t"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+source /home/ziox/.config/broot/launcher/bash/br
