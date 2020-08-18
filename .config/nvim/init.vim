@@ -7,3 +7,4 @@ source $HOME/.config/nvim/themes/airline.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 lua require'plug-colorizer'
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+:let g:languagetool_jar='/usr/share/languagetool'

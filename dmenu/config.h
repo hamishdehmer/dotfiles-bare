@@ -9,9 +9,9 @@ static const char *fonts[] = {
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { "#c0b18b", "#1f1f1f" },
-	[SchemeSel] = { "#c0b18b", "#7b8748" },
-	[SchemeOut] = { "#c0b18b", "#7b8748" },
+	[SchemeNorm] = { "#f8f8f2", "#282a36" },
+	[SchemeSel] = { "#f8f8f2", "#44475a" },
+	[SchemeOut] = { "#f8f8f2", "#44475a" },
 };
 /* -l and -g options; controls number of lines and columns in grid if > 0 */
 static unsigned int lines      = 10;

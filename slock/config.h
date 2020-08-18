@@ -1,11 +1,11 @@
 /* user and group to drop privileges to */
 static const char *user  = "ziox";
-static const char *group = "ziox";
+static const char *group = "wheel";
 
 static const char *colorname[NUMCOLS] = {
-	[INIT] =   "black",     /* after initialization */
-	[INPUT] =  "#444b4b",   /* during input */
-	[FAILED] = "#614445",   /* wrong password */
+	[INIT] =   "#000000",     /* after initialization */
+	[INPUT] =  "#282A36",   /* during input */
+	[FAILED] = "#FF5555",   /* wrong password */
 };
 
 /* treat a cleared input like a wrong password (color) */
