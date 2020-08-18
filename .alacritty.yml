@@ -14,7 +14,8 @@
   bold_italic:
     family: Hack Nerd Font Mono
     style: Bold Italic
-size: 24
+  size: 14
+
 
 # Colors (Dracula)
 colors:
@@ -63,8 +64,9 @@ colors:
     
 cursor:
     style: Block
-background_opacity: 0.85
+background_opacity: 1 
 shell:
     program: /usr/bin/zsh
     args:
         - --login
+
