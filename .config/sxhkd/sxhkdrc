@@ -18,32 +18,68 @@ alt + b
 alt + n
   nemo
 
+# spotify
+alt + m
+  alacritty --command ncspot
+
+# Reddit: Tuir
+alt + r
+  alacritty --command tuir
+
+# Calendar
+alt + KP_End
+  alacritty --command calcurse
+
 # make sxhkd reload its configuration files:
 alt + Escape
 	pkill -USR1 -x sxhkd
+
+# Screenshots
+Print
+	flameshot full -p ~/pix/ss/
+
+Print + shift
+	flameshot gui
+
+Print + control
+	flameshot screen -p ~/pix/ss/
+
+# Pulse Controls
+super + F3
+  pulseaudiocontrol up 2
+
+super + F2 
+  pulseaudiocontrol down 2
+
+super + F4
+  pulseaudiocontrol mute
 
 #
 # bspwm hotkeys
 #
 
-# quit/restart bspwm
-alt + shift + {q,r}
-	bspc {quit,wm -r}
+# restart bspwm
+alt + shift + r
+	bspc wm -r
+
+# quit bspwm
+alt + shift + Escape
+  bspc quit
 
 # close and kill
-alt + {_,shift + }w
+alt + {_,shift + }q
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
-alt + m
+alt + shift + m
 	bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
-alt + y
+alt + shift + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest window
-alt + g
+alt + shift + g
 	bspc node -s biggest.window
 
 #
@@ -62,12 +98,14 @@ alt + ctrl + {m,x,y,z}
 # focus/swap
 #
 
+
+
 # focus the node in the given direction
 alt + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-alt + {p,b,comma,period}
+alt + shift + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
@@ -83,7 +121,7 @@ alt + {grave,Tab}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
-alt + {o,i}
+alt + shift + {o,i}
 	bspc wm -h off; \
 	bspc node {older,newer} -f; \
 	bspc wm -h on
@@ -91,6 +129,10 @@ alt + {o,i}
 # focus or send to the given desktop
 alt + {_,shift + }{1-6}
 	bspc {desktop -f,node -d} '^{1-6}'
+
+# send focused node to next monitor
+alt + shift + n
+  bspc node focused -m last --follow
 
 #
 # preselect

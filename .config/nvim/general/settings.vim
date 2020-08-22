@@ -1,9 +1,10 @@
 " set leader key
-let g:mapleader = "\<Space>"
+let mapleader = "\<Space>"
 
 set termguicolors
 syntax enable 
-colorscheme dracula
+colorscheme dracula 
+
 " Enables syntax highlighing
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set wrap                                " Wraps Text
@@ -44,6 +45,7 @@ set formatoptions-=cro                  " Stop newline continuation of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set autochdir                           " Your working directory will always be the same as your working directory
 set thesaurus+=/home/ziox/thesaurus/thesaurii.txt
+set scrolloff=18
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
@@ -51,7 +53,18 @@ au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm al
 cmap w!! w !sudo tee %
 
 " Key bindings
-nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-n> :NERDTreeToggle<CR
+
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+nmap <Leader>l <Plug>(Limelight)
+xmap <Leader>l <Plug>(Limelight)
+
+" Limelight Configuration
+let g:limelight_default_coefficient = 0.7
+let g:limelight_paragraph_span = 0
+
 " NERDTree Config 
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1

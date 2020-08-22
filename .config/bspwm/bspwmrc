@@ -5,19 +5,22 @@ sxhkd &
 picom &
 nitrogen --restore &
 flameshot &
+bspc wm -O HDMI-0 HDMI-1 & 
+pulseaudio -D &
 $HOME/.config/polybar/launch.sh
 
 # Monitors
 bspc monitor HDMI-0 -d 1 2 3 4 5 6
-bspc monitor DVI-D-0 -d
+bspc monitor DVI-D-0 -d 1 2 3 4 5 6
 
 # BSPWM Configuration
 bspc config border_width         2
-bspc config window_gap           6
+bspc config border_radius        3
+bspc config window_gap           10
 bspc config top_padding          0
-bspc config bottom_padding       6
-bspc config left_padding         6
-bspc config right_padding        6
+bspc config bottom_padding       0
+bspc config left_padding         0
+bspc config right_padding        0
 bspc config split_ratio          0.50
 bspc config click_to_focus       true
 bspc config borderless_monocle   true
