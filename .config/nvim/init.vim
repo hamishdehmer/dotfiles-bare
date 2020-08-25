@@ -8,4 +8,4 @@ source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/rainbow.vim
 lua require'plug-colorizer'
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
-:let g:languagetool_jar='/usr/share/languagetool'
+:let g:languagetool_jar='/usr/share/languagetool/languagetool.jar'

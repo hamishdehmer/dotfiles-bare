@@ -2,8 +2,12 @@
 let mapleader = "\<Space>"
 
 set termguicolors
-syntax enable 
-colorscheme dracula 
+syntax enable
+
+" Miramare settings
+let g:miramare_enable_italic = 1
+let g:miramare_disable_italic_comment = 1
+colorscheme miramare
 
 " Enables syntax highlighing
 set hidden                              " Required to keep multiple buffers open multiple buffers

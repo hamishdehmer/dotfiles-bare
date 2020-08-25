@@ -2,19 +2,19 @@
 # wm independent hotkeys
 #
 
-# terminal emulator
+# Terminal Emulator
 alt + Return
 	alacritty
 
-# program launcher
+# Program Launcher
 alt + d
 	dmenu_run
 
-# brave browser
+# Brave Browser
 alt + b
   brave
 
-# nemo
+# Nemo
 alt + n
   nemo
 
@@ -26,9 +26,16 @@ alt + m
 alt + r
   alacritty --command tuir
 
+# Slock
+alt + shift + s
+ slock
+
 # Calendar
 alt + KP_End
   alacritty --command calcurse
+
+
+
 
 # make sxhkd reload its configuration files:
 alt + Escape
@@ -133,6 +140,10 @@ alt + {_,shift + }{1-6}
 # send focused node to next monitor
 alt + shift + n
   bspc node focused -m last --follow
+
+# focus next monitor
+alt + ctrl + n
+  bspc monitor -f next
 
 #
 # preselect

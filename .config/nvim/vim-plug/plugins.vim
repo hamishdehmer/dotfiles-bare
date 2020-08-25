@@ -72,4 +72,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Unicode Manager
   Plug 'chrisbra/unicode.vim'
 
+  Plug 'jeffkreeftmeijer/vim-dim'
+
   call plug#end()
