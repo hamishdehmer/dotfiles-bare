@@ -4,7 +4,7 @@
 
 # Terminal Emulator
 alt + Return
-	alacritty
+	kitty
 
 # Program Launcher
 alt + d
@@ -20,11 +20,11 @@ alt + n
 
 # spotify
 alt + m
-  alacritty --command ncspot
+  kitty --execute ncspot
 
 # Reddit: Tuir
 alt + r
-  alacritty --command tuir
+  kitty --execute tuir
 
 # Slock
 alt + shift + s
@@ -32,10 +32,7 @@ alt + shift + s
 
 # Calendar
 alt + KP_End
-  alacritty --command calcurse
-
-
-
+  kitty --execute calcurse
 
 # make sxhkd reload its configuration files:
 alt + Escape
