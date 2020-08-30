@@ -1,4 +1,5 @@
 alacritty
+kitty
 aseprite
 bitwarden
 foliate
@@ -16,14 +17,31 @@ zsh
 zsh-autosuggestions
 zsh-completions
 zsh-syntax-highlighting
-surge
 nemo 
+flameshot
+audacity
+mpv
+noto-fonts-emoji
+notoemoji-nerd-font-mono
+dejavusansmono-nerd-font-mono
+dejavu-sans-mono
+font awesome 5
+fontawesome
+polybar
+qbittorrent
+rememberthemilk
+sameboy
+thunderbird
+vlc
+zathura
+zathura-djvu
+zathura-pdf-mupdf
+youtube-dl
 
 ## Terminal Applications
 ncspot
 tuir
 calcurse
-flameshot
 bspwm
 sxhkd
 neomutt
@@ -37,8 +55,6 @@ wget
 youtube-dl
 neovim
 ranger
-lf
-vifm
 curl
 dwarffortress
 nethack
@@ -50,3 +66,19 @@ weechat
 ledger
 taskwarrior
 tldr
+2048.c
+asciiquarium
+arandr
+xrandr
+aspell
+aspell-en
+bandwhich
+bat
+cava
+sxiv
+mailcap
+moc
+vitetris
+wordgrinder
+ytop
+
