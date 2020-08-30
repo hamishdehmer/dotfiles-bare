@@ -13,6 +13,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   " File Explorer
   Plug 'scrooloose/NERDTree'
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'     " Highlighting Nerdtree
+  Plug 'ryanoasis/vim-devicons'                      " Icons for Nerdtree
 
   " Auto pairs for '(' '[' '{'
   Plug 'jiangmiao/auto-pairs'
@@ -68,10 +70,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   " Prettier
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+  
+  Plug 'kovetskiy/sxhkd-vim'
 
-  " Unicode Manager
-  Plug 'chrisbra/unicode.vim'
+  Plug 'junegunn/goyo.vim'                           " Distraction-free viewing
 
-  Plug 'jeffkreeftmeijer/vim-dim'
+  Plug 'junegunn/vim-emoji'                          " Vim needs emojis!
 
   call plug#end()
+
