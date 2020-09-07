@@ -4,11 +4,11 @@
 
 # Terminal Emulator
 alt + Return
-	kitty
+  kitty
 
 # Program Launcher
 alt + d
-	dmenu_run
+  dmenu_run
 
 # Brave Browser
 alt + b
@@ -18,21 +18,9 @@ alt + b
 alt + n
   nemo
 
-# spotify
-alt + m
-  kitty --execute ncspot
-
-# Reddit: Tuir
-alt + r
-  kitty --execute tuir
-
 # Slock
-alt + shift + s
- slock
-
-# Calendar
-alt + KP_End
-  kitty --execute calcurse
+super + s
+  slock
 
 # make sxhkd reload its configuration files:
 alt + Escape
@@ -43,19 +31,19 @@ Print
 	flameshot full -p ~/pix/ss/
 
 Print + shift
-	flameshot gui
+	flameshot gui -p ~/pix/ss/
 
 Print + control
 	flameshot screen -p ~/pix/ss/
 
 # Pulse Controls
-super + F3
+alt + F3
   pulseaudiocontrol up 2
 
-super + F2 
+alt + F2 
   pulseaudiocontrol down 2
 
-super + F4
+alt + F4
   pulseaudiocontrol mute
 
 #
@@ -79,12 +67,12 @@ alt + shift + m
 	bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
-alt + shift + y
-	bspc node newest.marked.local -n newest.!automatic.local
+#alt + shift + y
+#	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest window
-alt + shift + g
-	bspc node -s biggest.window
+#alt + shift + g
+#	bspc node -s biggest.window
 
 #
 # state/flags
@@ -95,14 +83,12 @@ alt + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
-alt + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
+#alt + ctrl + {m,x,y,z}
+#	bspc node -g {marked,locked,sticky,private}
 
 #
 # focus/swap
 #
-
-
 
 # focus the node in the given direction
 alt + {_,shift + }{h,j,k,l}
@@ -113,8 +99,8 @@ alt + shift + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
-alt + {_,shift + }c
-	bspc node -f {next,prev}.local.!hidden.window
+# alt + {_,shift + }c
+#	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 alt + bracket{left,right}
@@ -125,10 +111,10 @@ alt + {grave,Tab}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
-alt + shift + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+#alt + shift + {o,i}
+#	bspc wm -h off; \
+#	bspc node {older,newer} -f; \
+#	bspc wm -h on
 
 # focus or send to the given desktop
 alt + {_,shift + }{1-6}
@@ -142,9 +128,9 @@ alt + shift + n
 alt + ctrl + n
   bspc monitor -f next
 
-#
-# preselect
-#
+#############
+# PRESELECT #
+#############
 
 # preselect the direction
 alt + ctrl + {h,j,k,l}
