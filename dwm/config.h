@@ -6,18 +6,18 @@ static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "hack:size=12" };
-static const char dmenufont[]       = "hack:size=12";
+static const char *fonts[]          = { "DejaVuSansMono Nerd Font Mono:size=12" };
+static const char dmenufont[]       = "DejaVuSansMono Nerd Font Mono:size=12";
 // Background color
-static const char col_gray1[]       = "#1f1f1f";
+static const char col_gray1[]       = "#2a2426";
 // Inactive window border color
-static const char col_gray2[]       = "#614445";
+static const char col_gray2[]       = "#e68183";
 // Font Color
-static const char col_gray3[]       = "#978965";
+static const char col_gray3[]       = "#e6d6ac";
 // Current tag and current window font color
-static const char col_gray4[]       = "#c0b18b";
+static const char col_gray4[]       = "#d8caac";
 // Top bar second color and active window border color
-static const char col_cyan[]        = "#647035";
+static const char col_cyan[]        = "#87af87";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -63,7 +63,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 static const char *browser[] = { "Brave", NULL };
 static const char *slock[] = { "slock", NULL };
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
