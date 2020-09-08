@@ -186,7 +186,10 @@ static void motionnotify(XEvent *e);
 static void movemouse(const Arg *arg);
 static Client *nexttiled(Client *c);
 static void pop(Client *);
+static Client *prevtiled(Client *c);
 static void propertynotify(XEvent *e);
+static void pushdown(const Arg *arg);
+static void pushup(const Arg *arg);
 static void quit(const Arg *arg);
 static Monitor *recttomon(int x, int y, int w, int h);
 static void resize(Client *c, int x, int y, int w, int h, int interact);
@@ -251,7 +254,7 @@ static void (*handler[LASTEvent]) (XEvent *) = {
 	[ConfigureRequest] = configurerequest,
 	[ConfigureNotify] = configurenotify,
 	[DestroyNotify] = destroynotify,
-	[EnterNotify] = enternotify,
+ 	[EnterNotify] = enternotify,
 	[Expose] = expose,
 	[FocusIn] = focusin,
 	[KeyPress] = keypress,
@@ -733,8 +736,9 @@ drawbar(Monitor *m)
 
 	if ((w = m->ww - sw - x) > bh) {
 		if (m->sel) {
+			int mid = (m->ww - TEXTW(m->sel->name)) / 2 - x;
 			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
-			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
+			drw_text(drw, x, 0, w, bh, mid, m->sel->name, 0);
 			if (m->sel->isfloating)
 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
 		} else {
@@ -1211,6 +1215,16 @@ pop(Client *c)
 	arrange(c->mon);
 }
 
+Client *
+prevtiled(Client *c) {
+	Client *p, *r;
+
+	for(p = selmon->clients, r = NULL; p && p != c; p = p->next)
+		if(!p->isfloating && ISVISIBLE(p))
+			r = p;
+	return r;
+}
+
 void
 propertynotify(XEvent *e)
 {
@@ -1246,6 +1260,37 @@ propertynotify(XEvent *e)
 		if (ev->atom == netatom[NetWMWindowType])
 			updatewindowtype(c);
 	}
+}
+
+void
+pushdown(const Arg *arg) {
+	Client *sel = selmon->sel, *c;
+
+	if(!sel || sel->isfloating || sel == nexttiled(selmon->clients))
+		return;
+	if((c = nexttiled(sel->next))) {
+		detach(sel);
+		sel->next = c->next;
+		c->next = sel;
+	}
+	focus(sel);
+	arrange(selmon);
+}
+
+void
+pushup(const Arg *arg) {
+	Client *sel = selmon->sel, *c;
+
+	if(!sel || sel->isfloating)
+		return;
+	if((c = prevtiled(sel)) && c != nexttiled(selmon->clients)) {
+		detach(sel);
+		sel->next = c;
+		for(c = selmon->clients; c->next != sel->next; c = c->next);
+		c->next = sel;
+	}
+	focus(sel);
+	arrange(selmon);
 }
 
 void
