@@ -27,7 +27,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
- COMPLETION_WAITING_DOTS="true"
 
 # HIST_STAMPS="mm/dd/yyyy"
 
@@ -42,7 +41,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(archlinux colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-directory-history/zsh-directory-history.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -68,12 +66,11 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-
 ### Export
-export TERM="kitty"              # getting proper colors
+export TERM="xterm-256color"              # getting proper colors
 export TERMINAL="kitty"
 export HISTCONTROL=ignoredups:erasedups   # no duplicate entries
-export EDITOR="neovim"      # $EDITOR use Emacs in terminal
+export EDITOR="neovim"
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 path+=('/home/ziox/.local/bin')
@@ -140,6 +137,7 @@ alias fgrep='fgrep --color=auto'
 
 ### Adding flags
 alias cp="cp -i"                          # confirm before overwriting something
+
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 
@@ -154,13 +152,18 @@ alias btop="bpytop"
 alias spotify="ncspot"
 alias tldr="tldr --theme=base16"
 alias cat="bat"
-alias find="fd"
-alias sed="sed"
-alias du="dust"
+alias sed="sd"
+
+# Broot
+alias br='br -dhp'
+alias bs='br --sizes'
 
 ### Misc
 alias new="clear; pfetch"
 alias mount="mount | column -t"
+
+# the terminal rickroll
+alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 
 ### Navigation
 alias ..='cd ..' 
@@ -189,3 +192,4 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 source /home/ziox/.config/broot/launcher/bash/br
 
 eval $(thefuck --alias)
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true

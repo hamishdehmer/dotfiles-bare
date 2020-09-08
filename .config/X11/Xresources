@@ -33,25 +33,6 @@
 !*.red:        #ff5555
 !*.yellow:     #f1fa8c
 
-! Atlas
-!*.black:      #002635
-!*.d-blue:     #00384d
-!*.blue:       #517F8d
-!*.l-blue:     #6c8b91
-!*.d-gray:     #869696
-!*.gray:       #a1a19a
-!*.cream:      #e6e6dc
-!*.white:      #fafaf8
-!*.red:        #ff5a67
-!*.orange:     #f08e48
-!*.yellow:     #ffcc1b
-!*.green:      #7fc06e
-!*.cyan:       #5dd7b9
-!*.navy:       #14747e
-!*.purple:     #9a70a4
-!*.magenta:    #c43060
-
-
 ! Miramare
 *.bg:         #2A2426
 *.fg          #e6d6ac
