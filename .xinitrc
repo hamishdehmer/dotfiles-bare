@@ -49,14 +49,15 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # Get it up and running!
-picom -bcC --experimental-backends --blur-method gaussian --blur-deviation 60 --blur-size 30 &
-nitrogen --restore &
-pulseaudio -D &
+picom -bcC --experimental-backends --blur-method gaussian --blur-deviation 60 --blur-size 30 & # Compositor
+nitrogen --restore & # Wallpaper restore
+pulseaudio -D & # Sound, sometimes you have to run pulseaudio -k first.
 
 # Bar
-while true; do
-	xsetroot -name "$(echo VOLUME:) $(amixer | awk '/Left:/ {print $5}') $(echo '|') $( date +"%F %R" )"
-   sleep 1s    # Update time every minute
-done &
+#while true; do
+#	xsetroot -name "$(echo VOLUME:) $(amixer | awk '/Left:/ {print $5}') $(echo '|') $( date +"%F %T" )"
+#   sleep 1s    # Update time every minute
+#done &
 
-exec dwm
+slstatus & # Bar info
+exec dwm # Window manager
