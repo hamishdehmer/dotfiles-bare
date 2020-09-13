@@ -2,7 +2,7 @@
 export ZSH="/home/ziox/.config/oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -67,15 +67,32 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 ### Export
+export FFF_HIDDEN=1
+export FFF_OPENER="xdg-open"
+export FFF_LS_COLORS=1
+export FFF_STAT_CMD="stat"
+export FFF_CD_ON_EXIT=1
+export FFF_FAV1=~/.config/
+export FFF_FAV2=~/dwm
+export FFF_FAV3=~/pix/Wallpapers/
+export FFF_FAV4=~/dox/
+export FFF_FAV5=/
+export FFF_FAV6=
+export FFF_FAV7=
+export FFF_FAV8=
+export FFF_FAV9=
+export FFF_FILE_FORMAT=" %f"
+export FFF_MARK_FORMAT="> %f*"
+# 
 export TERM="xterm-256color"              # getting proper colors
 export TERMINAL="kitty"
 export HISTCONTROL=ignoredups:erasedups   # no duplicate entries
-export EDITOR="neovim"
+export EDITOR="nvim"
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 path+=('/home/ziox/.local/bin')
 ### Startup Applications
- pfetch
+# pfetch
 /home/ziox/color-scripts/color-scripts/bars
 
 ### Archive Extraction
@@ -185,11 +202,24 @@ alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
 alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+## To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source /home/ziox/.config/broot/launcher/bash/br
 
 eval $(thefuck --alias)
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+#POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
+# Functions
+
+f() { # CD on fff exit
+    fff "$@"
+    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
+}
+
+PROMPT="%F{black}[%F{magenta} %~%F{black}]
+%F{black}[%F{red} %n%F{#e39b7b}@%F{yellow}%m%F{black}] 
+%F{black}[%F{green}%(?..%F{red})%f%F{black}] %F{green}$%f "
+
+RPROMPT="%F{black}[%F{blue} %T%F{black}]"
