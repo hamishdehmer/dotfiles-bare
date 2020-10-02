@@ -87,12 +87,12 @@ export FFF_MARK_FORMAT="> %f*"
 export TERM="xterm-256color"              # getting proper colors
 export TERMINAL="kitty"
 export HISTCONTROL=ignoredups:erasedups   # no duplicate entries
-export EDITOR="nvim"
+export EDITOR="vim"
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 path+=('/home/ziox/.local/bin')
 ### Startup Applications
-# pfetch
+pfetch
 /home/ziox/color-scripts/color-scripts/bars
 
 ### Archive Extraction
@@ -163,10 +163,7 @@ alias matrixme="cmatrix -ksbC magenta -M Arch"
 alias smci="sudo make clean install"
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' 
 alias rm="rm -i"
-alias top="ytop"
-alias vim="nvim"
 alias btop="bpytop"
-alias spotify="ncspot"
 alias tldr="tldr --theme=base16"
 alias cat="bat"
 alias sed="sd"
@@ -208,7 +205,6 @@ alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
 source /home/ziox/.config/broot/launcher/bash/br
 
-eval $(thefuck --alias)
 #POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
 # Functions
@@ -219,7 +215,7 @@ f() { # CD on fff exit
 }
 
 PROMPT="%F{black}[%F{magenta} %~%F{black}]
-%F{black}[%F{red} %n%F{#e39b7b}@%F{yellow}%m%F{black}] 
+%F{black}[%F{red} %n%F{magenta}@%F{yellow}%m%F{black}] 
 %F{black}[%F{green}%(?..%F{red})%f%F{black}] %F{green}$%f "
 
 RPROMPT="%F{black}[%F{blue} %T%F{black}]"

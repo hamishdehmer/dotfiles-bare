@@ -5,9 +5,11 @@ set termguicolors
 syntax enable
 
 " Miramare settings
-let g:miramare_enable_italic = 1
-let g:miramare_disable_italic_comment = 1
-colorscheme miramare
+" let g:miramare_enable_italic = 1
+" let g:miramare_disable_italic_comment = 1
+
+" Theme
+colorscheme onedark
 
 " Enables syntax highlighing
 set hidden                              " Required to keep multiple buffers open multiple buffers
@@ -47,7 +49,7 @@ set formatoptions-=cro                  " Stop newline continuation of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set autochdir                           " Your working directory will always be the same as your working directory
 set thesaurus+=/home/ziox/thesaurus/thesaurii.txt
-set scrolloff=18
+"set scrolloff=18
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
@@ -74,3 +76,5 @@ let NERDTreeDirArrows = 1
 let NERDTreeShowHidden = 1
 let g:NERDTreeDirArrowExpandable = '►'
 let g:NERDTreeDirArrowCollapsible = '▼'
+
+hi Normal guibg=NONE ctermbg=NONE

@@ -8,6 +8,9 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
+  " Pywal
+  Plug 'dylanaraps/wal.vim'
+
   " Better Syntax Support
   Plug 'sheerun/vim-polyglot'
 
@@ -44,6 +47,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   " Mirmare Theme
   Plug 'franbach/miramare'
+
+  " OneDark Theme
+  Plug 'joshdick/onedark.vim'
 
   " Airline Bar
   Plug 'vim-airline/vim-airline'
