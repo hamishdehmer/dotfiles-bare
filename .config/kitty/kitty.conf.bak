@@ -2,61 +2,61 @@ font_family      JetBrainsMono Nerd Font Mono
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
-font_size        16
-symbol_map       codepoints Font Awesome 5 Free Regular
+font_size        14
 symbol_map       codepoints Noto Color Emoji
 symbol_map       codepoints PowerlineSymbols
-symbol_map       codepoints Font Awesome 5 Brands Regular
+symbol_map       codepoints Font Awesome 5 Brands
+symbol_map       codepoints Font Awesome 5 Free
 symbol_map       codepoints FontAwesome
-#: disable_ligatures always
+disable_ligatures always
 
-cursor #abb2bf
-cursor_text_color #282a2e
+cursor #e6d6ac
+cursor_text_color #2a2426
 
-foreground #abb2bf
-background #282a2e
-background_opacity 0.40
+foreground #e6d6ac
+background #2a2426
+background_opacity 0.90
 
-selection_foreground #282a2e
-selection_background #61afef
+selection_foreground #e6d6ac
+selection_background #89beba
 
-color0 #373b41
-color8 #4b4e54
+color0 #444444  
+color8 #5b5b5b
 
 #: black
 
-color1 #e06c75
-color9 #e37a82
+color1 #e68183
+color9 #eb9a9c
 
 #: red
 
-color2  #98c379
-color10 #a2c986
+color2  #87af87
+color10 #93b793
 
 #: green
 
-color3  #e5c07b
-color11 #e7c688
+color3  #d9bb80
+color11 #e1c999
 
 #: yellow
 
-color4  #61afef
-color12 #70b7f0
+color4  #89beba
+color12 #a1cbc8
 
 #: blue
 
-color5  #c678dd
-color13 #cb85e0
+color5  #d3a0bc
+color13 #dcb3c9
 
 #: magenta
 
-color6  #56b6c2
-color14 #66bdc8
+color6  #87c095
+color14 #9fcdaa
 
 #: cyan
 
-color7  #abb2bf
-color15 #b3bbc9
+color7  #d8caac
+color15 #ebdebd
 
 #: white
 
@@ -65,7 +65,7 @@ editor nvim
 
 scrollback_lines 2000
 
-url_color #47a3c6
+url_color #89beba
 url_style curly
 open_url_modifiers kitty_mod
 open_url_with default
@@ -85,9 +85,9 @@ enable_audio_bell no
 
 remember_window_size no
 
-active_border_color #3dcb69
-inactive_border_color #e23f5c
-bell_border_color #da5988
+active_border_color #87c095
+inactive_border_color #444444
+bell_border_color #e68183
 
 tab_bar_edge bottom
 tab_separator " ┇"

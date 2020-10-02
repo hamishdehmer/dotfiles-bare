@@ -10,53 +10,53 @@ symbol_map       codepoints Font Awesome 5 Brands Regular
 symbol_map       codepoints FontAwesome
 #: disable_ligatures always
 
-cursor #abb2bf
-cursor_text_color #282a2e
+cursor #FFFFE1
+cursor_text_color #2d202e
 
-foreground #abb2bf
-background #282a2e
+foreground #FFFFE1
+background #2d202e
 background_opacity 0.40
 
-selection_foreground #282a2e
-selection_background #61afef
+selection_foreground #2d202e
+selection_background #4fb6dd
 
-color0 #373b41
-color8 #4b4e54
+color0 #3d3a40  
+color8 #504d53
 
 #: black
 
-color1 #e06c75
-color9 #e37a82
+color1 #e23f5c
+color9 #fc4767
 
 #: red
 
-color2  #98c379
-color10 #a2c986
+color2  #3dcb69
+color10 #44e275
 
 #: green
 
-color3  #e5c07b
-color11 #e7c688
+color3  #e0cf61
+color11 #ffea70
 
 #: yellow
 
-color4  #61afef
-color12 #70b7f0
+color4  #5267d0
+color12 #5c73e8
 
 #: blue
 
-color5  #c678dd
-color13 #cb85e0
+color5  #da5988
+color13 #f36398
 
 #: magenta
 
-color6  #56b6c2
-color14 #66bdc8
+color6  #47a3c6
+color14 #4fb6dd
 
 #: cyan
 
-color7  #abb2bf
-color15 #b3bbc9
+color7  #e5e5ca
+color15 #ffffe1
 
 #: white
 
