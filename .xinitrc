@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Get it up and running!
-picom -bc --experimental-backends --blur-method gaussian --blur-deviation 15 --blur-size 30 & # Compositor
+picom -bc & # Compositor
 nitrogen --restore & # Wallpaper restore
 redshift-gtk & # Bluelight reduction
 pulseaudio -D & # Sound, sometimes you have to run pulseaudio -k first.
