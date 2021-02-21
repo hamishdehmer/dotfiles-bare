@@ -32,5 +32,5 @@ export EDITOR="nvim"
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' 
 alias ls='exa -al --color=always --group-directories-first'
 
-pfetch
-~/color-scripts/color-scripts/bars
+#pfetch
+#~/color-scripts/color-scripts/bars
